@@ -51,4 +51,4 @@ firstNameUser = prompt("Введіть будь-ласка ваше Ім'я (Л�
 middleNameUser = prompt("Введіть будь-ласка ваше По-Батькові (Латинськими літерами)")
 ageUser = prompt("Скільки вам років?")
 
-console.log(firstNameUser,middleNameUser,ageUser)
+console.log(firstNameUser,middleNameUser,+ageUser)
