@@ -16,55 +16,60 @@ let first_array = [
     [28,29,30],
     'school'
 ]
-for (let i = 0; i<10; i++){
-    console.log(first_array[i])
-}
+console.log(first_array[0])
+console.log(first_array[1])
+console.log(first_array[2])
+console.log(first_array[3])
+console.log(first_array[4])
+console.log(first_array[5])
+console.log(first_array[6])
+console.log(first_array[7])
+console.log(first_array[8])
+console.log(first_array[9])
 
-
-let History_Book = {
+let history_Book = {
     title:'The Woman In Blue',
     pageCount: 384,
     genre: 'history'
 }
-let Fantasy_Book = {
+let fantasy_Book = {
     title:'A Game of Thrones',
     pageCount: 864,
     genre: 'fantasy'
 }
-let Thriller_Book = {
+let thriller_Book = {
     title: 'I See You',
     pageCount: 384,
     genre: 'thriller'
 }
-
 
 let authorsArr = [
     {name:'Gary Keller', age:65},
     {name: 'Cormac McCarthy', age:89},
     {name: 'Olly Richards', age:45}
 ]
-let Business_Book = {
+
+console.log(typeof authorsArr)
+
+let business_Book = {
     title: 'The One Thing',
     pageCount:240,
     genre: 'business',
     authors: authorsArr[0]
 }
-let New_Releases_Book = {
+let new_Releases_Book = {
     title: 'The Passenger',
     pageCount: 400,
     genre: 'new releases',
     authors: authorsArr[1]
 }
-let Spanish_Book = {
+let spanish_Book = {
     title: 'Short Stories in Spanish for Beginners',
     pageCount:240,
     genre: 'spanish',
     authors: authorsArr[2]
 }
 
-
-
-console.log('---------------------------------')
 let users = [
     {
         name: 'Masha',
@@ -117,6 +122,13 @@ let users = [
         password: 'l634l'
     }
 ]
-for (let i = 0; i<10; i++ ){
-    console.log(users[i].name,' pass: ',users[i].password)
-}
+console.log(users[0].password)
+console.log(users[1].password)
+console.log(users[2].password)
+console.log(users[3].password)
+console.log(users[4].password)
+console.log(users[5].password)
+console.log(users[6].password)
+console.log(users[7].password)
+console.log(users[8].password)
+console.log(users[9].password)
