@@ -43,31 +43,23 @@ let thriller_Book = {
     genre: 'thriller'
 }
 
-let authorsArr = [
-    {name:'Gary Keller', age:65},
-    {name: 'Cormac McCarthy', age:89},
-    {name: 'Olly Richards', age:45}
-]
-
-console.log(typeof authorsArr)
-
 let business_Book = {
     title: 'The One Thing',
     pageCount:240,
     genre: 'business',
-    authors: authorsArr[0]
+    authors: [{name: 'Ivan', age:23}]
 }
 let new_Releases_Book = {
     title: 'The Passenger',
     pageCount: 400,
     genre: 'new releases',
-    authors: authorsArr[1]
+    authors: [{name: 'Cormac McCarthy', age:89}]
 }
 let spanish_Book = {
     title: 'Short Stories in Spanish for Beginners',
     pageCount:240,
     genre: 'spanish',
-    authors: authorsArr[2]
+    authors: [{name: 'Olly Richards', age:45}]
 }
 
 let users = [
