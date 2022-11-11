@@ -4,7 +4,7 @@
 // }
 // // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 // for (let i = 0; i < 10; i++) {
-//     document.write(i, ' <div><h1>some text can be here!</h1></div>')
+//     document.write(`${i} <div><h1>some text can be here!</h1></div>`)
 // }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 // let i=0
@@ -15,7 +15,7 @@
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 // let i=0
 // while (i<20){
-//     document.write(i, '<h1>some text can be here!</h1>')
+//     document.write(`<h1> <i>${i}</i>  some text can be here!</h1>`)
 //     i++
 // }
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -37,7 +37,7 @@
 // // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 //
 // for (let i = 0; i < listOfItems.length; i++) {
-//     document.write('<ul><li>', listOfItems[i],'</li></ul>')
+//     document.write(`<ul><li>${listOfItems[i]}</li></ul>`)
 // }
 
 // -----------------------------------------------
