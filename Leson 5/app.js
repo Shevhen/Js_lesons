@@ -79,9 +79,18 @@ function CreateUlfor(){
 // }
 // ShowArrNext(users)
 // - створити функцію яка повертає найменьше число з масиву
-// let f = [100 ,2,10,-22,5, 4,8,-7]
+let f = [100 ,2,10,-22,5, 4,8,-7]
 // function MinofArr(arr){
 //     return Math.min.apply(null, arr);
+// }
+// function MinofArr(arr){
+//     let min = arr[0]
+//     for (let i=0; i<arr.length; i++){
+//         if (arr[i]<min){
+//             min = arr[i]
+//         }
+//     }
+//     return min
 // }
 // console.log(MinofArr(f))
 
