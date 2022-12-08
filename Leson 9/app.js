@@ -271,7 +271,7 @@ function style(element,width,height,backgroundColor){
     element.style.borderRadius = '20%'
     document.body.appendChild(element)
 }
-//
+
 // let someElement = document.createElement('div')
 // someElement.setAttribute('id', 'text')
 // style(someElement,'200','200','green')
@@ -282,9 +282,9 @@ function style(element,width,height,backgroundColor){
 //
 // button.addEventListener("click", ()=> someElement.remove())
 
-//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
-//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
 // let input = document.createElement('input')
 // style(input, 50,30)
 //
@@ -295,7 +295,7 @@ function style(element,width,height,backgroundColor){
 // button.addEventListener("click", ()=> {
 //     let age = input.value
 //     function message(msg,element){
-//         element.innerHTML = `<h1>Ваш вік ${age} i це ${msg} за 18 років</h1>`
+//         element.innerHTML = `<h1>Ваш вік ${age} років ${msg}</h1>`
 //         document.body.style.backgroundColor = 'gray'
 //         document.body.style.display = 'flex'
 //         document.body.style.justifyContent = 'center'
@@ -305,15 +305,15 @@ function style(element,width,height,backgroundColor){
 //         input.remove()
 //         button.remove()
 //     }
-//     if(+age>18){
+//     if(+age>=18){
 //         let div = document.createElement('div')
 //         style(div,600,400,'green')
-//         message('більше',div)
+//         message('все добре',div)
 //     }
-//     if(+age<18){
+//     else if(+age<18){
 //         let div = document.createElement('div')
 //         style(div,600,400,'red')
-//         message('менше',div)
+//         message('вхід заборонено',div)
 //     }
 // })
 
