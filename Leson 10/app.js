@@ -1,16 +1,16 @@
-function listUsers(){
+function listUsers(div){
     let listOfUsers = document.createElement('h1')
-    listDiv.appendChild(listOfUsers)
+    div.appendChild(listOfUsers)
     listOfUsers.innerHTML = `List of Users`
 
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(info=> info.json())
         .then((info) => {
             for (const infoElement of info) {
-                let div = document.createElement('div')
-                listDiv.appendChild(div)
+                let div1 = document.createElement('div')
+                div.appendChild(div1)
                 let h = document.createElement('h3')
-                div.appendChild(h)
+                div1.appendChild(h)
                 let a = document.createElement('a')
                 a.href = 'user-details.html?id=' + infoElement.id
                 a.innerHTML =`ID: ${infoElement.id}| ${infoElement.name}`
@@ -86,7 +86,7 @@ function listUsers(){
 // label.innerHTML = "<< Enter user id there"
 // let listDiv = document.createElement('div')
 // document.body.appendChild(listDiv)
-// listUsers()
+// listUsers(listDiv)
 // button.addEventListener('click',()=>{
 //     let userId = input.value
 // fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
@@ -108,38 +108,38 @@ function listUsers(){
 //     На странице post-details.html:
 // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
 
-// let button = document.createElement('button')
-// document.body.appendChild(button)
-// button.innerHTML = 'post of current user'
-//
-// let input = document.createElement('input')
-// document.body.appendChild(input)
-// let label = document.createElement('label')
-// document.body.appendChild(label)
-// label.innerHTML = "<< Enter user id there"
-//
-// let listDiv = document.createElement('div')
-// document.body.appendChild(listDiv)
-// listUsers()
-//
-// button.addEventListener('click',()=>{
-//     let inputUserId = input.value
-//     fetch(`https://jsonplaceholder.typicode.com/users/${inputUserId}/posts`)
-//         .then(info=> info.json())
-//         .then((info) => {
-//             for (const infoElement of info) {
-//                 let div = document.createElement('div')
-//                 document.body.appendChild(div)
-//                 let h = document.createElement('h2')
-//                 div.appendChild(h)
-//                 let link = document.createElement('a')
-//                 h.appendChild(link)
-//                 link.innerHTML=`${infoElement.title}`
-//                 link.href= 'post-details.html?id='+ infoElement.userId + JSON.stringify(infoElement.title) + JSON.stringify(infoElement.id)
-//             }
-//         })
-//     listDiv.remove()
-// })
+let button = document.createElement('button')
+document.body.appendChild(button)
+button.innerHTML = 'post of current user'
+
+let input = document.createElement('input')
+document.body.appendChild(input)
+let label = document.createElement('label')
+document.body.appendChild(label)
+label.innerHTML = "<< Enter user id there"
+
+let listDiv = document.createElement('div')
+document.body.appendChild(listDiv)
+listUsers(listDiv)
+
+button.addEventListener('click',()=>{
+    let inputUserId = input.value
+    fetch(`https://jsonplaceholder.typicode.com/users/${inputUserId}/posts`)
+        .then(info=> info.json())
+        .then((info) => {
+            for (const infoElement of info) {
+                let div = document.createElement('div')
+                document.body.appendChild(div)
+                let h = document.createElement('h2')
+                div.appendChild(h)
+                let link = document.createElement('a')
+                h.appendChild(link)
+                link.innerHTML=`${infoElement.title}`
+                link.href= 'post-details.html?id='+ infoElement.userId + JSON.stringify(infoElement.title) + JSON.stringify(infoElement.id)
+            }
+        })
+    listDiv.remove()
+})
 
 // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 //
