@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user-details</title>
+</head>
+<body>
+<script>
+    let url = new URL(location.href)
+    let id = url.searchParams.get('id')
+
+    fetch('https://jsonplaceholder.typicode.com/users/' + id)
+    .then(info => info.json())
+    .then((info) =>{
+        const entriesV = Object.values(info);
+        const entriesK = Object.keys(info);
+        const entriesVA = Object.values(info.address);
+        const entriesKA = Object.keys(info.address);
+        const entriesVAG = Object.values(info.address.geo);
+        const entriesKAG = Object.keys(info.address.geo);
+        const entriesVC = Object.values(info.company);
+        const entriesKC = Object.keys(info.company);
+        let div = document.createElement('div')
+        document.body.appendChild(div)
+
+        let hI = document.createElement('h2')
+        div.appendChild(hI)
+        hI.innerHTML = `Info:`
+
+        for (let i = 0; i < entriesK.length; i++) {
+            if(typeof entriesV[i] === "object"){
+                continue
+            }
+            let h3 = document.createElement('h3')
+            div.appendChild(h3)
+            h3.innerHTML = `${entriesK[i]}: ${entriesV[i]}`
+        }
+        let hA = document.createElement('h2')
+        div.appendChild(hA)
+        hA.innerHTML = `Address:`
+        for (let i = 0; i < entriesKA.length; i++) {
+            if(typeof entriesVA[i] === "object"){
+                continue
+            }
+            let div1 = document.createElement('div')
+            div.appendChild(div1)
+            let h3 = document.createElement('h3')
+            div1.appendChild(h3)
+            h3.innerHTML = `${entriesKA[i]}: ${entriesVA[i]}`
+        }
+        let hAG = document.createElement('h2')
+        div.appendChild(hAG)
+        hAG.innerHTML = `Geo:`
+        for (let i = 0; i < entriesVAG.length; i++) {
+            if(typeof entriesVA[i] === "object"){
+                continue
+            }
+            let div1 = document.createElement('div')
+            div.appendChild(div1)
+            let h3 = document.createElement('h3')
+            div1.appendChild(h3)
+            h3.innerHTML = `${entriesKAG[i]}: ${entriesVAG[i]}`
+        }
+        let hC = document.createElement('h2')
+        div.appendChild(hC)
+        hC.innerHTML = `Company:`
+        for (let i = 0; i < entriesKC.length; i++) {
+            if(typeof entriesV[i] === "object"){
+                continue
+            }
+            let divC = document.createElement('div')
+            div.appendChild(divC)
+            let hC = document.createElement('h3')
+            divC.appendChild(hC)
+            hC.innerHTML = `${entriesKC[i]}: ${entriesVC[i]}`
+        }
+    })
+</script>
+</body>
+</html>

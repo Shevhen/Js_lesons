@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+<script>
+  let url = new URL(location.href)
+  let searchParams = url.searchParams.get('id')
+  let userInformation = searchParams.split('"')
+  let userId = userInformation[0]
+  let title = userInformation[1]
+  let postId = userInformation[2]
+
+  let div = document.createElement('div')
+          document.body.appendChild(div)
+  fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+  .then(info => info.json())
+  .then(info=>{
+      for (const infoElement of info) {
+          if (title === infoElement.title){
+              div.innerHTML = `<div> <h4><u>User: ${infoElement.userId}</u>,  <u>Post number: ${infoElement.id}</u></h4>
+                                    <h2>Post title: ${infoElement.title}</h2>
+                                    <h2><i>Post: ${infoElement.body}</i></h2></div>`
+
+          }
+      }
+  })
+    let divComments = document.createElement('div')
+  document.body.appendChild(divComments)
+  let button = document.createElement('button')
+  divComments.appendChild(button)
+  button.innerHTML = 'All information about comments'
+  button.addEventListener('click', ()=>{
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+      .then(value => value.json())
+      .then(value => {
+          for (const valueElement of value) {
+              let div = document.createElement('div')
+              divComments.appendChild(div)
+              div.innerHTML = `<h4><u>Post number: ${valueElement.postId}</u>, <u>ID: ${valueElement.id}</u></h4>
+                                        <h3>Title: ${valueElement.name}</h3>
+                                        <h3>Email: <i> ${valueElement.email}</i></h3>
+                                        <h3>Coment: ${valueElement.body}</h3>`
+             div.style.marginBottom = '8%'
+          }
+      })
+  })
+</script>
+</body>
+</html>
